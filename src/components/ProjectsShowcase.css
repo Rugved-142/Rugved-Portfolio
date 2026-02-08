@@ -1,0 +1,73 @@
+.projects-showcase {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.showcase-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #00d4ff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .showcase-title {
+    font-size: 4.5rem;
+  }
+}
+
+.showcase-subtitle {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .showcase-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+.showcase-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.showcase-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 1rem;
+}
+
+.showcase-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+  color: white;
+}
+
+.showcase-overlay h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #00d4ff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.showcase-overlay p {
+  font-size: 1rem;
+  color: #ccc;
+}

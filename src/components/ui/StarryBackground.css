@@ -1,0 +1,94 @@
+.starry-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.stars-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Small stars */
+.stars-small {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 200px 180px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 240px 60px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 280px 140px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 320px 100px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 360px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 400px 160px, #fff, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 420px 220px;
+  animation: twinkle 4s ease-in-out infinite;
+  opacity: 1;
+}
+
+/* Medium stars with cyan tint */
+.stars-medium {
+  background-image: 
+    radial-gradient(3px 3px at 60px 90px, #00d4ff, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 120px 50px, #00d4ff, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 180px 140px, #00ff88, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 240px 100px, #00d4ff, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 300px 160px, #00ff88, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 360px 80px, #00d4ff, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 400px 200px;
+  animation: twinkle 5s ease-in-out infinite;
+  animation-delay: -2s;
+  opacity: 0.8;
+}
+
+/* Large glowing stars */
+.stars-large {
+  background-image: 
+    radial-gradient(4px 4px at 100px 120px, rgba(0, 212, 255, 1), rgba(0,0,0,0)),
+    radial-gradient(4px 4px at 250px 80px, rgba(0, 255, 136, 1), rgba(0,0,0,0)),
+    radial-gradient(4px 4px at 350px 150px, rgba(0, 212, 255, 1), rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 450px 200px;
+  animation: pulse 6s ease-in-out infinite;
+  opacity: 1;
+}
+
+@keyframes twinkle {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.2);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 1; 
+  }
+  50% { 
+    opacity: 1; 
+  }
+}
+
+/* Add radial gradient overlay for depth */
+.starry-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+}
