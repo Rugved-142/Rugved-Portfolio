@@ -18,6 +18,10 @@ function Skills() {
     {
       category: "Security & Architecture",
       skills: ['OAuth2', 'SAML', 'JWT', 'REST APIs', 'Microservices', 'Circuit Breaker', 'Rate Limiting', 'RabbitMQ', 'JSON Schema']
+    },
+    {
+      category: "Testing & QA",
+      skills: ['Selenium WebDriver', 'TestNG', 'Apache POI', 'ExtentReports', 'Page Object Model', 'Excel Data-Driven Testing']
     }
   ]
 
