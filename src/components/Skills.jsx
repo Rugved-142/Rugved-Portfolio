@@ -5,7 +5,7 @@ function Skills() {
   const skillCategories = [
     {
       category: "Languages & Frameworks",
-      skills: ['Java', 'Spring Boot', 'JavaScript', 'Node.js', 'Python', 'TypeScript', 'React', 'Express.js']
+      skills: ['Java', 'Spring Boot', 'JavaScript', 'Node.js', 'Python', 'TypeScript', 'React', 'Express.js', 'Maven']
     },
     {
       category: "Cloud & DevOps",
@@ -13,11 +13,11 @@ function Skills() {
     },
     {
       category: "Databases & Caching",
-      skills: ['Redis', 'PostgreSQL', 'MySQL', 'MongoDB', 'AWS RDS']
+      skills: ['Redis', 'Elasticsearch', 'PostgreSQL', 'MySQL', 'MongoDB', 'AWS RDS']
     },
     {
       category: "Security & Architecture",
-      skills: ['OAuth2', 'SAML', 'JWT', 'REST APIs', 'Microservices', 'Circuit Breaker', 'Rate Limiting']
+      skills: ['OAuth2', 'SAML', 'JWT', 'REST APIs', 'Microservices', 'Circuit Breaker', 'Rate Limiting', 'RabbitMQ', 'JSON Schema']
     }
   ]
 

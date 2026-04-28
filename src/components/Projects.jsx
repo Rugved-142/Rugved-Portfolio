@@ -3,6 +3,13 @@ import './Projects.css'
 function Projects() {
   const projects = [
     {
+      title: 'Big Data Indexing - Medical Plan API',
+      description: 'RESTful API for managing medical insurance plans with JSON Schema validation, ETag-based conditional operations, decomposed Redis storage, and parent-child Elasticsearch indexing with RabbitMQ message queue and OAuth2 security.',
+      tech: ['Java 17', 'Spring Boot 3.4', 'Redis', 'Elasticsearch', 'RabbitMQ', 'OAuth2', 'Docker', 'Maven'],
+      link: 'https://github.com/Rugved-142/INFO_7255_Big_Data_Indexing',
+      icon: '🔍'
+    },
+    {
       title: 'RateLimitX - Distributed Rate Limiting Service',
       description: 'Production-grade API rate limiter with multiple algorithms (Fixed Window, Token Bucket, Sliding Window Counter) and Circuit Breaker pattern for fault tolerance.',
       tech: ['Java', 'Spring Boot', 'Redis', 'Docker', 'REST APIs', 'Gatling'],
