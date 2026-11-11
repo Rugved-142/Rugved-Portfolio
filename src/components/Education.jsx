@@ -3,18 +3,18 @@ import './Education.css'
 function Education() {
   const education = [
     {
-      degree: 'Master of Science in Information Systems',
+      degree: 'MS in Information Systems',
       school: 'Northeastern University',
       location: 'Boston, MA',
       year: 'April 2026',
-      description: 'Focus on Cloud Computing & Software Engineering'
+      description: 'Coursework: Data Structures & Algorithms, Object-Oriented Design, Databases, Cloud Computing'
     },
     {
-      degree: 'Bachelor of Engineering',
-      school: 'Savitribai Phule Pune University',
+      degree: 'BE in Electronics and Telecommunication',
+      school: 'Pune Institute of Computer Technology (SPPU)',
       location: 'Pune, India',
       year: 'July 2022',
-      description: 'Strong foundation in Computer Science and Engineering principles'
+      description: 'Electronics and Telecommunication Engineering'
     }
   ]
 

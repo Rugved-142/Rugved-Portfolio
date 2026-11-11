@@ -5,23 +5,23 @@ function Skills() {
   const skillCategories = [
     {
       category: "Languages & Frameworks",
-      skills: ['Java', 'Spring Boot', 'JavaScript', 'Node.js', 'Python', 'TypeScript', 'React', 'Express.js', 'Maven']
+      skills: ['Java', 'Spring Boot', 'Spring Security', 'Python', 'JavaScript', 'Node.js', 'Express.js', 'React', 'SQL', 'Bash', 'Maven']
     },
     {
       category: "Cloud & DevOps",
-      skills: ['AWS (EC2, S3, RDS, SNS, VPC)', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions', 'CI/CD']
+      skills: ['AWS (EC2, S3, RDS, Lambda, IAM, CloudWatch)', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions', 'CI/CD']
     },
     {
-      category: "Databases & Caching",
-      skills: ['Redis', 'Elasticsearch', 'PostgreSQL', 'MySQL', 'MongoDB', 'AWS RDS']
+      category: "Databases & Messaging",
+      skills: ['PostgreSQL', 'MySQL', 'Redis', 'MongoDB', 'Elasticsearch', 'Kafka', 'RabbitMQ']
     },
     {
-      category: "Security & Architecture",
-      skills: ['OAuth2', 'SAML', 'JWT', 'REST APIs', 'Microservices', 'Circuit Breaker', 'Rate Limiting', 'RabbitMQ', 'JSON Schema']
+      category: "Security & Identity",
+      skills: ['OAuth2', 'OIDC', 'SAML', 'JWT', 'SCIM', 'LDAP', 'Duo MFA', 'Role-based access control']
     },
     {
-      category: "Testing & QA",
-      skills: ['Selenium WebDriver', 'TestNG', 'Apache POI', 'ExtentReports', 'Page Object Model', 'Excel Data-Driven Testing']
+      category: "Testing & Observability",
+      skills: ['JUnit 5', 'Testcontainers', 'Mockito', 'Jest', 'Gatling', 'Selenium WebDriver', 'TestNG', 'Prometheus', 'Grafana', 'ELK']
     }
   ]
 
