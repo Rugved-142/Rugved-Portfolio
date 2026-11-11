@@ -71,58 +71,61 @@ function Projects() {
 
   const projects = [
     {
-      title: 'Big Data Indexing - Medical Plan API',
-      description: 'RESTful API for managing medical insurance plans with JSON Schema validation, ETag-based conditional operations, decomposed Redis storage, and parent-child Elasticsearch indexing with RabbitMQ message queue and OAuth2 security.',
-      details: 'Built a full stack indexing pipeline with decomposed Redis storage, conditional read/write flows using ETags, JSON Merge Patch support, and Elasticsearch parent-child search powered by RabbitMQ-driven async indexing. Includes Google OAuth2/JWT security and versioned REST endpoints.',
-      tech: ['Java 17', 'Spring Boot 3.4', 'Redis', 'Elasticsearch', 'RabbitMQ', 'OAuth2', 'Docker', 'Maven'],
-      link: 'https://github.com/Rugved-142/INFO_7255_Big_Data_Indexing',
-      icon: '🔍'
-    },
-    {
       title: 'RateLimitX - Distributed Rate Limiting Service',
-      description: 'Production-grade API rate limiter with multiple algorithms (Fixed Window, Token Bucket, Sliding Window Counter) and Circuit Breaker pattern for fault tolerance.',
-      details: 'Distributed rate limiting service with Redis-backed storage, multiple algorithms, fault-tolerant request handling, and production-ready REST APIs designed for scalable traffic control.',
-      tech: ['Java', 'Spring Boot', 'Redis', 'Docker', 'REST APIs', 'Gatling'],
-      link: 'https://github.com/Rugved-142/RateLimitX',
+      description: 'Distributed rate limiter with three algorithms as atomic Lua scripts on Redis, JWT-based tiered limits, a circuit breaker with in-memory fallback, and an optional Kafka analytics feed.',
+      details: 'Built a Redis-backed rate limiter (Java 21, Spring Boot) with JWT auth and tiered limits; all three algorithms run as atomic Lua scripts on Redis time, verified by a 200-thread test that admits exactly the limit. Added a circuit breaker with an in-memory fallback: with Redis frozen for 40 s under load, 0 of 2,800 requests failed on both Docker Compose and 2-replica Kubernetes, and deleting a pod under load dropped 0 requests. Added an optional Kafka analytics feed (non-blocking producer that drops events rather than delay requests; idempotent consumer writing hourly aggregates to PostgreSQL); 180 tests run in CI with a Trivy scan and a kind-based Kubernetes deploy.',
+      tech: ['Java 21', 'Spring Boot', 'Redis', 'Kafka', 'PostgreSQL', 'Kubernetes', 'Docker', 'Prometheus', 'Grafana', 'Testcontainers', 'GitHub Actions'],
+      link: 'https://github.com/Rugved-142/RatelimitX',
       icon: '🚦'
     },
     {
-      title: 'AI Phishing Detector - Chrome Extension',
-      description: 'Real-time phishing detection powered by Google Gemini AI with 85% accuracy. Multi-layered analysis evaluating 20+ risk factors including SSL certificates, domain age, and suspicious forms.',
-      details: 'Chrome extension that analyzes page signals and suspicious patterns with AI-assisted scoring to catch phishing attempts in real time.',
-      tech: ['JavaScript', 'Node.js', 'MongoDB', 'Google Gemini API', 'Chrome Extensions'],
-      link: 'https://github.com/Rugved-142/AI-Phishing-Detector',
-      icon: '🛡️'
-    },
-    {
       title: 'AWS Cloud Infrastructure & File Service',
-      description: 'Secure file management service with Terraform-provisioned AWS infrastructure. REST APIs for S3-based storage with RDS metadata and SNS integration for real-time notifications.',
-      details: 'Infrastructure-as-code project with AWS services, automated provisioning, file service APIs, and notification workflows built around a production-style cloud architecture.',
-      tech: ['Node.js', 'AWS (EC2, S3, RDS, SNS)', 'Terraform', 'GitHub Actions'],
+      description: 'Terraform-provisioned AWS infrastructure for a containerized Node.js application, with a GitHub Actions deployment pipeline and CloudWatch alarms.',
+      details: 'Provisioned AWS infrastructure with Terraform (VPC, EC2, ALB, ASG, RDS, Lambda, S3) for a containerized Node.js app. Built a GitHub Actions CI/CD pipeline (Docker, ECR) that deploys on every push to main. Added CloudWatch/SNS alarms (unhealthy hosts, CPU, Lambda errors, 5XX); least-privilege IAM, no hardcoded credentials.',
+      tech: ['Node.js', 'AWS (EC2, ALB, ASG, RDS, Lambda, S3, SNS, IAM)', 'Terraform', 'Docker', 'GitHub Actions', 'CloudWatch'],
+      // TODO(me): replace with a public repo URL
       link: 'https://github.com/orgs/CSYE6225-Rugved/repositories',
       icon: '☁️'
     },
     {
-      title: 'Selenium Test Automation',
-      description: 'Automated end-to-end test suite for NEU web applications with Selenium WebDriver, TestNG, Maven, Page Object Model, Excel-driven data, and ExtentReports.',
-      details: 'Automated testing framework built for Northeastern University web applications using Selenium WebDriver, TestNG, and Maven. It follows the Page Object Model, supports data-driven testing from Excel, generates HTML reports with ExtentReports, and includes five scenarios covering positive and negative flows such as Canvas events, Snell Library booking, dataset download validation, and academic calendar updates.',
-      tech: ['Java 11', 'Selenium WebDriver', 'TestNG', 'Maven', 'Apache POI', 'ExtentReports'],
-      link: '#',
-      icon: '🧪'
+      title: 'AI Phishing Detector - Chrome Extension',
+      description: 'Manifest V3 Chrome extension that scores phishing risk with 20+ rule-based checks (URL, DOM structure, brand impersonation) combined with Gemini 2.5 Flash analysis, and blocks high-risk URLs before the page loads.',
+      details: 'Shows color-coded risk badges in a popup and dashboard UI. 71 Jest tests across 5 suites and an optional Node/Express/MongoDB reporting API.',
+      tech: ['JavaScript', 'Chrome Extensions (Manifest V3)', 'Gemini API', 'Node.js', 'Express', 'MongoDB', 'Jest'],
+      link: 'https://github.com/Rugved-142/ai-phishing-detector',
+      icon: '🛡️'
+    },
+    {
+      title: 'Big Data Indexing - Medical Plan API',
+      description: 'RESTful API for managing medical insurance plans with JSON Schema validation, ETag-based conditional operations, decomposed Redis storage, and parent-child Elasticsearch indexing with RabbitMQ message queue and OAuth2 security. Course project.',
+      details: 'Built a full stack indexing pipeline with decomposed Redis storage, conditional read/write flows using ETags, JSON Merge Patch support, and Elasticsearch parent-child search powered by RabbitMQ-driven async indexing. Includes Google OAuth2/JWT security and versioned REST endpoints.',
+      tech: ['Java 17', 'Spring Boot 3.4.1', 'Redis', 'Elasticsearch', 'RabbitMQ', 'OAuth2', 'Docker', 'Maven'],
+      link: 'https://github.com/Rugved-142/INFO_7255_Big_Data_Indexing',
+      icon: '🔍'
     },
     {
       title: 'Community Connect',
-      description: 'Full-stack volunteer and donor management platform for NGOs with role-based access control, donation tracking, volunteer shift assignment, and reporting dashboards.',
-      details: 'Role-based platform for NGOs covering donation tracking, volunteer coordination, and dashboard reporting in a unified application.',
-      tech: ['Java', 'Spring Boot', 'MySQL'],
+      description: 'Java Swing desktop application for a volunteer and donation network (group project, INFO 5100): a four-level network, enterprise, organization and user hierarchy with role-specific screens, Twilio SMS notifications and JavaFaker seed data. Data is held in memory.',
+      details: 'Java Swing desktop application for a volunteer and donation network (group project, INFO 5100): a four-level network, enterprise, organization and user hierarchy with role-specific screens, Twilio SMS notifications and JavaFaker seed data. Data is held in memory.',
+      tech: ['Java 21', 'Swing', 'Maven', 'Twilio SDK', 'JavaFaker'],
+      // TODO(me): add what I personally built
       link: 'https://github.com/Rugved-142/Community_Connect',
       icon: '🤝'
     },
     {
+      title: 'Selenium Test Automation',
+      description: 'End-to-end test automation (group project) for Northeastern web applications with Selenium WebDriver, TestNG and the Page Object Model, Excel-driven data and ExtentReports. Sign-in scenarios wait for a manual Duo approval.',
+      details: 'End-to-end test automation framework for Northeastern University web applications using Selenium WebDriver, TestNG and Maven. It follows the Page Object Model, supports data-driven testing from Excel, and generates HTML reports with ExtentReports. Sign-in scenarios wait for a manual Duo approval. Group project.',
+      tech: ['Java 11', 'Selenium WebDriver', 'TestNG', 'Maven', 'Apache POI', 'ExtentReports'],
+      link: 'https://github.com/Rugved-142/Group2-selenium-automation-project',
+      icon: '🧪'
+    },
+    {
       title: 'Smart Waste Classification System',
-      description: 'AI-powered waste sorting using CNN (MobileNetV2) trained on 9 waste categories with 93.5% accuracy. Flask API with Streamlit UI for real-time predictions.',
+      description: 'Image classifier for waste categories using a CNN (MobileNetV2), with a Flask API and a Streamlit UI.',
       details: 'Computer vision pipeline for waste classification with model training, prediction API, and Streamlit interface for fast interactive demos.',
       tech: ['Python', 'TensorFlow', 'Flask', 'Streamlit', 'OpenCV'],
+      // TODO(me): re-add accuracy once I verify it in the notebook
       link: 'https://github.com/Rugved-142/Smart-Waste-Management-Recycling-System',
       icon: '🧠'
     }
