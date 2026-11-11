@@ -74,7 +74,7 @@ function Contact() {
           </div>
           <div className="social-links">
             <a href="https://github.com/Rugved-142" target="_blank" rel="noopener noreferrer" className="social-link">GitHub</a>
-            <a href="https://www.linkedin.com/in/rugved-gundawar/" target="_blank" rel="noopener noreferrer" className="social-link">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/rugved-gundawar" target="_blank" rel="noopener noreferrer" className="social-link">LinkedIn</a>
             <a href="https://medium.com/@gundawar.r" target="_blank" rel="noopener noreferrer" className="social-link">Medium</a>
             <a href="/Rugved_Gundawar_Resume.pdf" download className="social-link">Resume</a>
           </div>
