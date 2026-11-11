@@ -2,6 +2,16 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import './TestimonialCarousel.css'
 
+function getInitials(name = '') {
+  return name
+    .trim()
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((part) => part[0] || '')
+    .join('')
+    .toUpperCase()
+}
+
 function TestimonialCarousel({ testimonials, showArrows = true, showDots = true, className = '' }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [exitX, setExitX] = useState(0)
@@ -76,6 +86,13 @@ function TestimonialCarousel({ testimonials, showArrows = true, showDots = true,
               )}
 
               <div className="card-content">
+                {testimonial.avatar ? (
+                  <img className="card-avatar" src={testimonial.avatar} alt={testimonial.name} />
+                ) : (
+                  <div className="card-avatar card-avatar-initials" aria-hidden="true">
+                    {getInitials(testimonial.name)}
+                  </div>
+                )}
                 <h3 className="card-name">{testimonial.name}</h3>
                 {testimonial.role && <p className="card-role">{testimonial.role}</p>}
                 <div className="quote-mark">❝</div>
