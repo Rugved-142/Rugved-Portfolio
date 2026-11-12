@@ -17,19 +17,16 @@ function Navbar() {
   useEffect(() => {
     // Initialize from current hash
     const initialHash = window.location.hash.slice(1) || 'home'
-    console.log('Navbar initialized with section:', initialHash)
     setActiveSection(initialHash)
 
     // Listen to section changes from scroll spy
     const handleSectionChange = (event) => {
-      console.log('Navbar received sectionChange event:', event.detail.sectionId)
       setActiveSection(event.detail.sectionId)
     }
     
     // Listen to hash changes (from manual navigation or nav clicks)
     const handleHashChange = () => {
       const hash = window.location.hash.slice(1) || 'home'
-      console.log('Navbar received hashchange event:', hash)
       setActiveSection(hash)
     }
     
