@@ -12,6 +12,7 @@ import Footer from './components/Footer'
 import ShootingStars from './components/ui/ShootingStars'
 import StarryBackground from './components/ui/StarryBackground'
 import SpotlightCursor from './components/ui/SpotlightCursor'
+import { Analytics } from '@vercel/analytics/react'
 import useScrollSpy from './hooks/useScrollSpy'
 import './App.css'
 
@@ -69,6 +70,7 @@ function App() {
       <Testimonials />
       <Contact />
       <Footer />
+      <Analytics />
     </div>
   )
 }

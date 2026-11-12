@@ -1,234 +1,95 @@
-# Rugved Gundawar - Portfolio Website
+# Rugved Gundawar — Portfolio
 
-A modern, responsive portfolio website built with React and Vite, showcasing my experience, projects, skills, and achievements as a Software Engineer.
+The source for my personal portfolio site, deployed at
+[rugved-portfolio.vercel.app](https://rugved-portfolio.vercel.app).
 
-## 🌟 Features
+It is a single-page React site built with Vite. One scrolling page covers a hero
+intro, an about section with summary statistics, skills grouped into five
+categories, a work-experience timeline, a carousel of seven projects with a
+detail modal, education, testimonials, and a contact form with a downloadable
+resume. The design is a dark theme with cyan and green accents, an animated
+starfield background and scroll-triggered animations driven by Framer Motion.
 
-- **Modern Dark Theme Design** - Professional dark theme with cyan and green accent colors
-- **Fully Responsive** - Mobile, tablet, and desktop optimized
-- **Smooth Animations** - Enhanced user experience with smooth transitions
-- **SEO Optimized** - Meta tags for better search engine visibility
-- **Fast Loading** - Built with Vite for optimal performance
-- **Downloadable Resume** - PDF resume available for download
+## Tech stack
 
-## 📋 Sections
+- **React 18** with **Vite 5** for the build
+- **Framer Motion** for animation
+- Plain CSS per component — no UI framework
+- **@vercel/analytics** for page analytics
+- Deployed on **Vercel**
 
-- **Hero** - Introduction with name, title, and call-to-action buttons
-- **About** - Professional summary and statistics
-- **Skills** - Organized by categories (Languages, Cloud, Databases, Security)
-- **Experience** - Work history timeline
-- **Projects** - 5 featured projects with descriptions and tech stacks
-- **Education** - Academic background
-- **Testimonials** - Professional recommendations
-- **Contact** - Contact form and social links
+## Getting started
 
-## 🚀 Live Demo
+Requires Node.js 18 or newer.
 
-The portfolio is currently running at: `http://localhost:3000`
+Install dependencies:
 
-## 🛠️ Tech Stack
-
-- **Framework:** React 18.2.0
-- **Build Tool:** Vite 5.0.8
-- **Styling:** CSS3 with CSS Modules
-- **Package Manager:** npm
-
-## 📦 Installation & Setup
-
-### Prerequisites
-- Node.js (v14 or higher)
-- npm (v6 or higher)
-
-### Local Development
-
-1. **Clone the repository** (if needed)
-   ```bash
-   cd /Users/rugvedgundawar/Downloads/portfolio-website
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-   The site will open at `http://localhost:3000`
-
-4. **Build for production**
-   ```bash
-   npm run build
-   ```
-   Production files will be generated in the `dist/` folder
-
-5. **Preview production build**
-   ```bash
-   npm run preview
-   ```
-
-## 🌐 Deployment Options
-
-### Option 1: Vercel (Recommended)
-
-1. Install Vercel CLI:
-   ```bash
-   npm install -g vercel
-   ```
-
-2. Deploy:
-   ```bash
-   vercel
-   ```
-
-3. Follow the prompts to complete deployment
-
-**OR** Connect your GitHub repository to Vercel:
-- Go to [vercel.com](https://vercel.com)
-- Import your GitHub repository
-- Vercel will auto-detect Vite and deploy
-
-### Option 2: Netlify
-
-1. Install Netlify CLI:
-   ```bash
-   npm install -g netlify-cli
-   ```
-
-2. Build the project:
-   ```bash
-   npm run build
-   ```
-
-3. Deploy:
-   ```bash
-   netlify deploy --prod --dir=dist
-   ```
-
-**OR** Use Netlify Drop:
-- Build: `npm run build`
-- Drag and drop the `dist` folder to [Netlify Drop](https://app.netlify.com/drop)
-
-### Option 3: GitHub Pages
-
-1. Install gh-pages:
-   ```bash
-   npm install --save-dev gh-pages
-   ```
-
-2. Add to package.json:
-   ```json
-   {
-     "homepage": "https://rugved-142.github.io/portfolio",
-     "scripts": {
-       "predeploy": "npm run build",
-       "deploy": "gh-pages -d dist"
-     }
-   }
-   ```
-
-3. Update vite.config.js:
-   ```javascript
-   export default defineConfig({
-     plugins: [react()],
-     base: '/portfolio/',
-     server: {
-       port: 3000,
-       open: true
-     }
-   })
-   ```
-
-4. Deploy:
-   ```bash
-   npm run deploy
-   ```
-
-### Option 4: AWS S3 + CloudFront
-
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-
-2. Upload `dist/` folder contents to S3 bucket
-
-3. Configure S3 for static website hosting
-
-4. (Optional) Set up CloudFront for CDN
-
-## 📁 Project Structure
-
-```
-portfolio-website/
-├── public/
-│   └── Rugved_Gundawar_Resume.pdf
-├── src/
-│   ├── components/
-│   │   ├── About.jsx / .css
-│   │   ├── Contact.jsx / .css
-│   │   ├── Education.jsx / .css
-│   │   ├── Experience.jsx / .css
-│   │   ├── Footer.jsx / .css
-│   │   ├── Hero.jsx / .css
-│   │   ├── Navbar.jsx / .css
-│   │   ├── Projects.jsx / .css
-│   │   ├── Skills.jsx / .css
-│   │   └── Testimonials.jsx / .css
-│   ├── App.jsx
-│   ├── App.css
-│   ├── index.css
-│   └── main.jsx
-├── index.html
-├── package.json
-├── vite.config.js
-└── README.md
+```bash
+npm install
 ```
 
-## 🎨 Customization
+Start the dev server (Vite serves on port 3000, set in `vite.config.js`, and
+opens a browser automatically):
 
-### Update Personal Information
+```bash
+npm run dev
+```
 
-All personal data is hardcoded in the component files:
-- **Hero.jsx** - Name, title, tagline
-- **About.jsx** - Professional summary
-- **Skills.jsx** - Technical skills
-- **Experience.jsx** - Work history
-- **Projects.jsx** - Project details
-- **Education.jsx** - Academic background
-- **Testimonials.jsx** - Recommendations
-- **Contact.jsx** - Contact information
+Build the production bundle into `dist/`:
 
-### Update Colors
+```bash
+npm run build
+```
 
-Colors are defined in the CSS files using CSS variables and can be modified:
-- Primary Accent: `#00d4ff` (Cyan)
-- Secondary Accent: `#00ff88` (Green)
-- Background: `#0a0a0a` (Dark)
+Serve that build locally to check it before deploying:
 
-### Update Resume
+```bash
+npm run preview
+```
 
-Replace the PDF file at `public/Rugved_Gundawar_Resume.pdf` with your updated resume.
+## Deploying to Vercel
 
-## 📱 Contact
+Vercel auto-detects Vite, so no extra configuration is needed — the build
+command is `npm run build` and the output directory is `dist`.
 
-- **Email:** rgundawar1402@gmail.com
-- **Phone:** +1 (617) 792-8614
-- **LinkedIn:** [linkedin.com/in/rugved-gundawar](https://www.linkedin.com/in/rugved-gundawar/)
-- **GitHub:** [github.com/Rugved-142](https://github.com/Rugved-142)
-- **Medium:** [medium.com/@gundawar.r](https://medium.com/@gundawar.r)
+The simplest route is to connect the GitHub repository to Vercel once, at
+[vercel.com/new](https://vercel.com/new); every push to `main` then triggers a
+deployment, and pull requests get their own preview URL.
 
-## 📄 License
+To deploy by hand instead:
 
-This project is open source and available for personal use.
+```bash
+npx vercel --prod
+```
 
-## 🙏 Acknowledgments
+## Project layout
 
-- Built with React and Vite
-- Design inspiration from modern portfolio trends
-- Icons and emojis for visual enhancement
+```
+public/            Resume PDF, profile photo, favicon, robots.txt
+src/
+  components/      One .jsx + .css pair per section
+  components/ui/   Shared pieces: starfield, shooting stars,
+                   spotlight cursor, testimonial carousel
+  hooks/           useScrollSpy, drives nav highlighting
+  App.jsx          Composes the sections
+index.html         Page shell, metadata and noscript fallback
+```
 
----
+## Updating content
 
-**Built with ❤️ by Rugved Gundawar**
+Each section keeps its own content in the component file — `Hero.jsx`,
+`About.jsx`, `Skills.jsx`, `Experience.jsx`, `Projects.jsx`, `Education.jsx`,
+`Testimonials.jsx` and `Contact.jsx`. Skills, experience, projects and education
+are plain arrays near the top of their file.
+
+To swap the resume, replace `public/Rugved_Gundawar_Resume.pdf`, keeping the
+filename — Hero, Contact and the `index.html` noscript block all link to it.
+
+The accent colors are `#00d4ff` (cyan) and `#00ff88` (green) on a `#0a0a0a`
+background, repeated across the component stylesheets.
+
+## Contact
+
+- Email: rgundawar1402@gmail.com
+- LinkedIn: [linkedin.com/in/rugved-gundawar](https://www.linkedin.com/in/rugved-gundawar)
+- GitHub: [github.com/Rugved-142](https://github.com/Rugved-142)

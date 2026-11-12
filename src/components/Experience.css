@@ -66,3 +66,18 @@
   color: #ccc;
   line-height: 1.6;
 }
+
+/* Bullet list inside the timeline card: same text style as .description */
+.timeline-content .description-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+
+.timeline-content .description-list li {
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content .description-list li:last-child {
+  margin-bottom: 0;
+}

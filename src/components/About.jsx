@@ -7,27 +7,23 @@ function About() {
       <div className="about-content">
         <div className="about-text">
           <p>
-            I'm a Software Engineer with 2+ years of experience building secure, scalable backend systems. 
-            Specialized in distributed systems, cloud architecture, and authentication infrastructure (OAuth2, SAML, JWT). 
-            Currently pursuing MS in Information Systems at Northeastern University, focusing on cloud computing and software engineering.
+            I'm a backend software engineer with 3+ years of combined full-time and internship experience. I build Java and Spring Boot services and REST APIs, with a focus on identity and security integrations (OAuth2, SAML, SCIM) and the cloud infrastructure and monitoring around them.
           </p>
           <p>
-            My professional journey includes engineering enterprise authentication systems at miniOrange, 
-            building production-grade rate limiting services, and developing cloud-native applications on AWS. 
-            I'm passionate about creating systems that solve real-world problems while maintaining high security and performance standards.
+            At miniOrange I built SSO connectors used by 60,000+ enterprise users and worked directly with customers on integrations. I recently completed an MS in Information Systems at Northeastern University, where I built RateLimitX, a distributed rate limiter with a circuit breaker, Kubernetes deployment and an optional Kafka analytics feed.
           </p>
           <div className="about-stats">
             <div className="stat">
-              <h3>2+</h3>
-              <p>Years Experience</p>
+              <h3>60,000+</h3>
+              <p>Enterprise users on SSO connectors I built</p>
             </div>
             <div className="stat">
-              <h3>5</h3>
-              <p>Featured Projects</p>
+              <h3>3+</h3>
+              <p>Years of experience (full-time and internships)</p>
             </div>
             <div className="stat">
-              <h3>287+</h3>
-              <p>GitHub Contributions</p>
+              <h3>180</h3>
+              <p>Automated tests in RateLimitX</p>
             </div>
           </div>
         </div>
