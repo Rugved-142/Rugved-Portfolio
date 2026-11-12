@@ -19,7 +19,7 @@ import './App.css'
 function App() {
   const [loading, setLoading] = useState(true)
 
-  useScrollSpy()
+  useScrollSpy(!loading)
 
   useEffect(() => {
     // Simulate loading

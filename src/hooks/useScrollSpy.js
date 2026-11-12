@@ -1,12 +1,11 @@
 import { useEffect } from 'react'
 
-function useScrollSpy() {
+function useScrollSpy(enabled = true) {
   useEffect(() => {
-    console.log('ScrollSpy initialized')
-    
+    if (!enabled) return
+
     // Set initial hash if none exists
     if (!window.location.hash) {
-      console.log('Setting initial hash to #home')
       window.history.replaceState(null, '', '#home')
       window.dispatchEvent(new CustomEvent('sectionChange', { 
         detail: { sectionId: 'home' } 
@@ -14,10 +13,8 @@ function useScrollSpy() {
     }
 
     const sections = document.querySelectorAll('section[id]')
-    console.log(`Found ${sections.length} sections:`, Array.from(sections).map(s => s.id))
     
     if (sections.length === 0) {
-      console.warn('No sections found!')
       return
     }
 
@@ -34,15 +31,12 @@ function useScrollSpy() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const sectionId = entry.target.getAttribute('id')
-          console.log(`Section "${sectionId}" is now visible`)
           
           if (sectionId && sectionId !== currentSectionId) {
-            console.log(`Changing active section from "${currentSectionId}" to "${sectionId}"`)
             currentSectionId = sectionId
             
             // Update URL
             window.history.replaceState(null, '', `#${sectionId}`)
-            console.log('URL updated to:', window.location.href)
             
             // Notify navbar
             window.dispatchEvent(new CustomEvent('sectionChange', { 
@@ -57,18 +51,16 @@ function useScrollSpy() {
 
     // Observe all sections
     sections.forEach((section) => {
-      console.log(`Observing section: ${section.id}`)
       observer.observe(section)
     })
 
     // Cleanup
     return () => {
-      console.log('ScrollSpy cleanup')
       sections.forEach((section) => {
         observer.unobserve(section)
       })
     }
-  }, [])
+  }, [enabled])
 }
 
 export default useScrollSpy
