@@ -98,7 +98,7 @@ function Projects() {
     {
       title: 'Big Data Indexing - Medical Plan API',
       description: 'RESTful API for managing medical insurance plans with JSON Schema validation, ETag-based conditional operations, decomposed Redis storage, and parent-child Elasticsearch indexing with RabbitMQ message queue and OAuth2 security. Course project.',
-      details: 'Built a full stack indexing pipeline with decomposed Redis storage, conditional read/write flows using ETags, JSON Merge Patch support, and Elasticsearch parent-child search powered by RabbitMQ-driven async indexing. Includes Google OAuth2/JWT security and versioned REST endpoints.',
+      details: 'Built a backend indexing pipeline with decomposed Redis storage, conditional read/write flows using ETags, JSON Merge Patch support, and Elasticsearch parent-child search powered by RabbitMQ-driven async indexing. Includes Google OAuth2/JWT security and versioned REST endpoints.',
       tech: ['Java 17', 'Spring Boot 3.4.1', 'Redis', 'Elasticsearch', 'RabbitMQ', 'OAuth2', 'Docker', 'Maven'],
       link: 'https://github.com/Rugved-142/INFO_7255_Big_Data_Indexing',
       icon: '🔍'
